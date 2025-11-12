@@ -8,18 +8,16 @@ int	ft_first_negative(int dummy, ...)
 
 	va_start(args,dummy);
 	
-	int i = 0;
-	int nb = 0;
-	int neg_nb = -1;
+	int nb;
 
-	while (i < dummy)
+	while (1)
 	{
 		nb = va_arg(args,int);
 		if (nb < 0)
-			return neg_nb = nb;
-	i++;
+			return nb;
+		if (nb == 0)
+			return -1;
 	}
-	return neg_nb;
 }
 
 int	main()
