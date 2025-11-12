@@ -8,19 +8,18 @@ int	ft_add(int count, ...)
 	va_start(args,count);
 
 	int	i;
-	int	curent_val = 0;
+	int	sum = 0;
 
 	i = 0;
 	while (i < count)
 	{
-		curent_val = curent_val + va_arg(args,int);
+		sum += va_arg(args,int);
 	i++;
 	}
-	return curent_val;
+	return sum;
 }
 
 int	main()
 {
-	//char c = 'a';
-	printf("%d\n",ft_add(3,1,2,3));
+	printf("%d\n",ft_add(4,1,2,3,4));
 }
