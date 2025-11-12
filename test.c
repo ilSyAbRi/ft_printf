@@ -1,8 +1,9 @@
 #include <unistd.h>
 #include <stdio.h>
+#include <stdarg.h>
 
 int main()
 {
-	int count = 2 + write(1,"hello",5);
-	printf("%d\n",count);
+	va_list args;
+	printf("%d\n",sizeof(args));
 }
