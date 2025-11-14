@@ -6,47 +6,44 @@
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 17:44:02 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/14 18:55:12 by ilsyabri         ###   ########.fr       */
+/*   Updated: 2025/11/14 19:15:23 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static ft_check(char *str)
+static void ft_check_and_do(char c,...)
 {
-	int	i ;
+		if (c == 'c')
+			ft_putchar(c);
+		else if (c == 's')
 
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == 'c')
+		else if (c == 'p')
 
-		else if (str[i] == 's')
+		else if (c == 'd')
+			ft_putnbr(c);
+		else if (c == 'i')
 
-		else if (str[i] == 'p')
+		else if (c == 'u')
 
-		else if (str[i] == 'd')
+		else if (c == 'x')
 
-		else if (str[i] == 'i')
+		else if (c == 'X')
 
-		else if (str[i] == 'u')
-
-		else if (str[i] == 'x')
-
-		else if (str[i] == 'X')
-
-		else if (str[i] == '%')
-
-	i++;
-	}
+		else if (c == '%')
+			ft_putchar(c);
 }
 
 int	ft_printf(const char *str, ...)
 {
 	int	i;
+	va_list args;
 
+	va_start(args,str);
 	i = 0;
 	while (str[i])
 	{
 		if (str[i] == '%' && str[i + 1] != '\0')
-			ft_check(&str[i + 1]);
+			ft_check_and_do(str[i + 1]);
+		ft_putchar(str[i]);
+	i++;
 	}
 }
