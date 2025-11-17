@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/16 16:25:19 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/17 13:12:48 by ilsyabri         ###   ########.fr       */
+/*   Created: 2025/11/17 12:43:09 by ilsyabri          #+#    #+#             */
+/*   Updated: 2025/11/17 13:15:31 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include <stdio.h>
+#include "ft_printf.c"
 
-int	main(void)
+int	ft_putnbr(int nb)
 {
-	int nb_ft_printf;
-	int nb_printf;
+	if (nb == -2147483648)
+	{
+		write(1,"2147483648",11);
+		return 2;
+	}
+	if (nb < 0)
+	{
+		nb = nb * -1;
+	ft_putchar('-');
+	}
+	else if (nb > 9)
+		ft_putnbr(nb / 10);
+	ft_putchar(nb % 10 + '0');
 
-	nb_ft_printf = ft_printf("%hello bro you are %c\n you are %d", 'W',100);
-	printf("\n%d",nb_ft_printf);
-
-	printf("\n");
-	nb_printf = printf("hello bro you are %c\n you are %d", 'W',100);
-	printf("\n%d",nb_printf);
+	return (2);
 }

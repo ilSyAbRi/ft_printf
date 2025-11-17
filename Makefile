@@ -6,11 +6,11 @@
 #    By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/16 16:30:40 by ilsyabri          #+#    #+#              #
-#    Updated: 2025/11/17 12:36:26 by ilsyabri         ###   ########.fr        #
+#    Updated: 2025/11/17 12:50:44 by ilsyabri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC =	ft_putchar.c ft_printf.c
+SRC =	ft_putchar.c ft_putnbr.c ft_printf.c
 
 OBJ = $(SRC:.c=.o)
 NAME = libftprintf.a

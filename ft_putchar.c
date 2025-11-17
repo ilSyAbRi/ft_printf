@@ -6,13 +6,14 @@
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:24:25 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/16 16:38:47 by ilsyabri         ###   ########.fr       */
+/*   Updated: 2025/11/17 13:06:42 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
+	return (2);
 }
