@@ -6,7 +6,7 @@
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:14:49 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/17 13:13:28 by ilsyabri         ###   ########.fr       */
+/*   Updated: 2025/11/17 13:36:50 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 
 int		ft_printf(const char *str, ...);
-int	ft_putchar(char c);
-int	ft_putnbr(int nb);
+
+void	ft_putchar(char c);
+void	ft_putnbr(int nb);
 #endif

@@ -6,27 +6,25 @@
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 12:43:09 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/17 13:15:31 by ilsyabri         ###   ########.fr       */
+/*   Updated: 2025/11/17 13:35:42 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.c"
 
-int	ft_putnbr(int nb)
+void	ft_putnbr(int nb)
 {
 	if (nb == -2147483648)
 	{
 		write(1,"2147483648",11);
-		return 2;
+		return ;
 	}
 	if (nb < 0)
 	{
 		nb = nb * -1;
 	ft_putchar('-');
 	}
-	else if (nb > 9)
+	if (nb > 9)
 		ft_putnbr(nb / 10);
 	ft_putchar(nb % 10 + '0');
-
-	return (2);
 }
