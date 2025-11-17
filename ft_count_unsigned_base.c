@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_count_unsigned_base.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/16 16:14:49 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/17 14:54:25 by ilsyabri         ###   ########.fr       */
+/*   Created: 2025/11/17 14:40:01 by ilsyabri          #+#    #+#             */
+/*   Updated: 2025/11/17 14:43:39 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+int	count_unsigned_base(unsigned long nb, int base)
+{
+	int	count;
 
-# include <stdarg.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-int		ft_printf(const char *str, ...);
-
-void	ft_putchar(char c);
-void	ft_putnbr(int nb);
-int	ft_strlen(char *str);
-int	ft_count_signed_base(long nb, int base);
-int	ft_count_unsigned_base(unsigned long nb, int base);
-
-#endif
+	count = 0;
+	if (nb == 0)
+		return (1);
+	while (nb != 0)
+	{
+		count++;
+	nb = nb / base;
+	}
+	return count;
+}

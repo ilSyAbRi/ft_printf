@@ -6,18 +6,30 @@
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 17:44:02 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/17 13:49:22 by ilsyabri         ###   ########.fr       */
+/*   Updated: 2025/11/17 14:53:57 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static void	ft_check_and_do(char c, va_list *list)
+static int	ft_check_and_do(char c, va_list *list)
 {
+	int count;
+	int	keep;
+
+	count = 0;
+	keep = va_arg(*list,int);
 	if (c == 'c')
-		ft_putchar(va_arg(*list, int));
-	else if (c == 'd')
-		ft_putnbr(va_arg(*list, int));
+	{
+		ft_putchar(va_arg(keep, int));
+		count = 1;
+	}
+	else if (c == 'd'|| c == 'i')
+		{
+			count = ft_count_signed_base(keep,10);
+			ft_putnbr(keep);
+		}
+	return count;
 }
 
 int	check_valid_conversion(char c)
