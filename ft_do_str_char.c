@@ -1,21 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_do_str_char.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/16 16:25:19 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/18 20:52:27 by ilsyabri         ###   ########.fr       */
+/*   Created: 2025/11/18 20:35:31 by ilsyabri          #+#    #+#             */
+/*   Updated: 2025/11/18 20:55:34 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
-int	main(void)
+int	ft_do_str_char(char c, va_list *list)
 {
-	char str[] = "iliass";
-		ft_printf("%d\n",ft_printf("hello %s %s %c ",NULL, "syabri", 'w'));
-		printf("%d\n",printf("hello %s %s %c ",NULL,"syabri",'w'));
+	char	*str;
+	char	C;
+	if (c == 's')
+	{
+		str = va_arg(*list,char*);
+			if (str == NULL)
+			{
+				ft_putstr("(null)");
+				return 6;
+			}
+		ft_putstr(str);
+		return ft_strlen(str);
+	}
+	else if (c == 'c')
+	{
+		C = va_arg(*list,int);
+		ft_putchar(C);
+		return 1;
+	}
+	return 0;
 }
