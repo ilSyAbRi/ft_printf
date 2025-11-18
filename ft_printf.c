@@ -6,7 +6,7 @@
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 17:44:02 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/18 19:03:51 by ilsyabri         ###   ########.fr       */
+/*   Updated: 2025/11/18 19:18:34 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	Dispatch_Function(char c ,va_list *list)
 	if (c == 'i' || c == 'd' || c == 'u')
 		return (ft_do_base_10(c,list));
 	else if (c == 'x' || c == 'X')
-		return (ft_do_hex());
+		return (ft_do_hex(c,list));
 	/*else if (c == 's' || c == 'c')
 		return (ft_do_str_char());
 	else if (c == 'p')
