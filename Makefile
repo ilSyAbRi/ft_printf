@@ -6,11 +6,12 @@
 #    By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/16 16:30:40 by ilsyabri          #+#    #+#              #
-#    Updated: 2025/11/17 16:30:57 by ilsyabri         ###   ########.fr        #
+#    Updated: 2025/11/18 12:40:22 by ilsyabri         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC =	ft_putchar.c ft_putnbr.c ft_printf.c ft_count_signed_base.c ft_count_unsigned_base.c  
+SRC =	ft_putchar.c ft_putnbr.c ft_printf.c ft_count_signed_base.c ft_count_unsigned_base.c \
+	ft_putstr.c
 
 OBJ = $(SRC:.c=.o)
 NAME = libftprintf.a
