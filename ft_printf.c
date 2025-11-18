@@ -6,7 +6,7 @@
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 17:44:02 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/17 14:53:57 by ilsyabri         ###   ########.fr       */
+/*   Updated: 2025/11/18 12:30:32 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,18 +17,19 @@ static int	ft_check_and_do(char c, va_list *list)
 	int count;
 	int	keep;
 
-	count = 0;
-	keep = va_arg(*list,int);
+	count = 1;
 	if (c == 'c')
 	{
-		ft_putchar(va_arg(keep, int));
+		keep = va_arg(*list,int);
+		ft_putchar(keep);
 		count = 1;
 	}
 	else if (c == 'd'|| c == 'i')
-		{
+	{
+		keep = va_arg(*list,int);
 			count = ft_count_signed_base(keep,10);
 			ft_putnbr(keep);
-		}
+	}
 	return count;
 }
 
@@ -54,9 +55,8 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[i] == '%' && str[i + 1] != '\0' && check_valid_conversion(str[i + 1]))
 		{
-			ft_check_and_do(str[i + 1], &args);
+			count = count + ft_check_and_do(str[i + 1], &args);
 			i = i + 2;
-			count++;
 		}
 		else
 		{

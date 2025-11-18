@@ -6,7 +6,7 @@
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 12:43:09 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/17 13:35:42 by ilsyabri         ###   ########.fr       */
+/*   Updated: 2025/11/18 12:27:59 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@ void	ft_putnbr(int nb)
 {
 	if (nb == -2147483648)
 	{
-		write(1,"2147483648",11);
-		return ;
+		write(1, "-2147483648", 11);
+		return	;
 	}
 	if (nb < 0)
 	{
 		nb = nb * -1;
-	ft_putchar('-');
+		ft_putchar('-');
 	}
 	if (nb > 9)
 		ft_putnbr(nb / 10);
