@@ -6,7 +6,7 @@
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 14:40:01 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/18 17:47:35 by ilsyabri         ###   ########.fr       */
+/*   Updated: 2025/11/18 22:39:15 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_count_unsigned_base(unsigned long nb, int base)
 	while (nb != 0)
 	{
 		count++;
-	nb = nb / base;
+		nb = nb / base;
 	}
 	return count;
 }

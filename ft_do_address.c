@@ -6,7 +6,7 @@
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 21:23:09 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/18 22:10:52 by ilsyabri         ###   ########.fr       */
+/*   Updated: 2025/11/18 22:27:08 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_do_address(va_list *list)
 	if (addr == 0)
 	{
 		ft_putstr("(nil)");
-		return 4;
+		return 5;
 	}
 	ft_putstr("0x");
 	ft_print_hex(addr,0);

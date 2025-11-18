@@ -6,7 +6,7 @@
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 17:44:02 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/18 22:05:59 by ilsyabri         ###   ########.fr       */
+/*   Updated: 2025/11/18 22:22:39 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	Dispatch_Function(char c, va_list *list)
 	else if (c == 'p')
 		return (ft_do_address(list));
 	else if (c == '%')
-		return ft_do_modulo(void);
+		return ft_do_modulo();
 	return (0);
 }
 
