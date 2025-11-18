@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_print_upper_hex.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/16 16:25:19 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/18 17:19:35 by ilsyabri         ###   ########.fr       */
+/*   Created: 2025/11/18 14:17:01 by ilsyabri          #+#    #+#             */
+/*   Updated: 2025/11/18 14:24:27 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include <stdio.h>
+#include "ft_printf.c"
 
-int	main(void)
+void	ft_print_upper_hex(int nb)
 {
-	char *str = "iliass";
-		ft_printf("%d\n",ft_printf("hello %d %u %i",10, 100, 1000));
-		printf("%d\n",printf("hello %d %u %i",10,100,1000));
+	int	i;
+	char	*hex;
+
+	hex = "0123456789abcdef";
+	i = 0;
+	if (nb > 15)
+		ft_print_upper_hex(nb /16);
+	ft_putchar(hex[nb % 16]);
+
 }

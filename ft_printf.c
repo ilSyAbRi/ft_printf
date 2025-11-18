@@ -6,50 +6,33 @@
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 17:44:02 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/18 14:13:19 by ilsyabri         ###   ########.fr       */
+/*   Updated: 2025/11/18 17:18:18 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_check_and_do(char c, va_list *list)
+int	Dispatch_Function(char c ,va_list *list)
 {
-	int count;
-
-	count = 1;
-	if (c == 'c')
-	{
-		int	keep;
-		keep = va_arg(*list,int);
-		ft_putchar(keep);
-		count = 1;
-	}
-	else if (c == 'd'|| c == 'i')
-	{
-		int	keep ;
-		keep = va_arg(*list,int);
-			count = ft_count_signed_base(keep,10);
-			ft_putnbr(keep);
-	}
-	else if (c == 's')
-	{
-		char *keep ;
-		keep = va_arg(*list,char*);
-		ft_putstr(keep);
-		count = ft_strlen(keep);
-	}
+	if (c == 'i' || c == 'd' || c == 'u')
+		return (ft_do_base_10(list));
+	/*else if (c == 'x' || c == 'X')
+		return (ft_do_hex());
+	else if (c == 's' || c == 'c')
+		return (ft_do_str_char());
+	else if (c == 'p')
+		return (ft_do_address());
 	else if (c == '%')
-		ft_putchar('%');
-
-	return count;
+		return (do_%());*/
+	return 0;
 }
 
 int	check_valid_conversion(char c)
 {
 	if (c == 'c' || c == 's' || c == 'p'
-	|| c == 'd' || c == 'i' || c == 'u'
-	|| c == 'x' || c == 'X' || c == '%')
-		return 1;
+		|| c == 'd' || c == 'i' || c == 'u'
+		|| c == 'x' || c == 'X' || c == '%')
+			return 1;
 	return 0;
 }
 
@@ -57,6 +40,7 @@ int	ft_printf(const char *str, ...)
 {
 	int		i;
 	int		count;
+	int	track;
 	va_list	args;
 
 	va_start(args, str);
@@ -64,16 +48,18 @@ int	ft_printf(const char *str, ...)
 	count = 0;
 	while (str[i])
 	{
-		if (str[i] == '%' && str[i + 1] != '\0' && check_valid_conversion(str[i + 1]))
+		track = check_valid_conversion(str[i + 1]);
+		if (str[i] == '%' && str[i + 1] != '\0' && track)
 		{
-			count = count + ft_check_and_do(str[i + 1], &args);
+			count = count + Dispatch_Function(str,&args);
 			i = i + 2;
 		}
 		else
 		{
 			ft_putchar(str[i]);
-		i++;
-		count++;
+			i++;
+			count++;
+			track = 0;
 		}
 	}
 	va_end(args);
