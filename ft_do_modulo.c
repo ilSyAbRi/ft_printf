@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_do_modulo.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/16 16:25:19 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/18 21:33:26 by ilsyabri         ###   ########.fr       */
+/*   Created: 2025/11/18 22:00:28 by ilsyabri          #+#    #+#             */
+/*   Updated: 2025/11/18 22:05:44 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
-int	main(void)
+int	ft_do_modulo(void)
 {
-	char str[] = "iliass";
-		ft_printf("%d\n",ft_printf("hello %p %p %c ",NULL, "syabri", 'w'));
-		printf("%d\n",printf("hello %p %p %c ",NULL,"syabri",'w'));
+	ft_putchar('%');
+	return 1;
 }

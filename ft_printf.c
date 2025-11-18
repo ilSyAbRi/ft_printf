@@ -6,7 +6,7 @@
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 17:44:02 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/18 20:34:50 by ilsyabri         ###   ########.fr       */
+/*   Updated: 2025/11/18 22:05:59 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ int	Dispatch_Function(char c, va_list *list)
 		return (ft_do_hex(c, list));
 	else if (c == 's' || c == 'c')
 		return (ft_do_str_char(c,list));
-	/*else if (c == 'p')
-		return (ft_do_address());
+	else if (c == 'p')
+		return (ft_do_address(list));
 	else if (c == '%')
-		return (do_%());*/
+		return ft_do_modulo(void);
 	return (0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 20:35:31 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/18 20:55:34 by ilsyabri         ###   ########.fr       */
+/*   Updated: 2025/11/18 21:04:34 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_do_str_char(char c, va_list *list)
 {
 	char	*str;
-	char	C;
+	int	val_of_char;
 	if (c == 's')
 	{
 		str = va_arg(*list,char*);
@@ -29,8 +29,8 @@ int	ft_do_str_char(char c, va_list *list)
 	}
 	else if (c == 'c')
 	{
-		C = va_arg(*list,int);
-		ft_putchar(C);
+		val_of_char = va_arg(*list,int);
+		ft_putchar(val_of_char);
 		return 1;
 	}
 	return 0;

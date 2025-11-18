@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_do_address.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/16 16:25:19 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/18 21:33:26 by ilsyabri         ###   ########.fr       */
+/*   Created: 2025/11/18 21:23:09 by ilsyabri          #+#    #+#             */
+/*   Updated: 2025/11/18 21:43:52 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
-int	main(void)
+int	ft_do_address(va_list *list)
 {
-	char str[] = "iliass";
-		ft_printf("%d\n",ft_printf("hello %p %p %c ",NULL, "syabri", 'w'));
-		printf("%d\n",printf("hello %p %p %c ",NULL,"syabri",'w'));
+	if (*list == NULL)
+	{
+		ft_putstr("(null)");
+		return (6);
+	}
+	unsigned long	addr;
+
+	addr = (unsigned long)va_arg(*list,void*);
+
+	ft_putstr("0x");
+	ft_print_hex(addr,0);
+	return (2 + ft_count_unsigned_base(addr,16));	
 }
