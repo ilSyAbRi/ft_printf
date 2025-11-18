@@ -6,7 +6,7 @@
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 17:44:02 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/18 17:18:18 by ilsyabri         ###   ########.fr       */
+/*   Updated: 2025/11/18 17:53:44 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	Dispatch_Function(char c ,va_list *list)
 {
 	if (c == 'i' || c == 'd' || c == 'u')
-		return (ft_do_base_10(list));
+		return (ft_do_base_10(c,list));
 	/*else if (c == 'x' || c == 'X')
 		return (ft_do_hex());
 	else if (c == 's' || c == 'c')
@@ -51,7 +51,7 @@ int	ft_printf(const char *str, ...)
 		track = check_valid_conversion(str[i + 1]);
 		if (str[i] == '%' && str[i + 1] != '\0' && track)
 		{
-			count = count + Dispatch_Function(str,&args);
+			count = count + Dispatch_Function(str[i + 1],&args);
 			i = i + 2;
 		}
 		else

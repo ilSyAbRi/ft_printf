@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_unsigned_base.c                           :+:      :+:    :+:   */
+/*   ft_do_base_10.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/17 14:40:01 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/18 17:47:35 by ilsyabri         ###   ########.fr       */
+/*   Created: 2025/11/18 17:21:24 by ilsyabri          #+#    #+#             */
+/*   Updated: 2025/11/18 17:42:03 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_count_unsigned_base(unsigned long nb, int base)
+int	ft_do_base_10(char c, va_list *list)
 {
-	int	count;
+	int			signed_nb;
+	unsigned int	unsigned_nb;
 
-	count = 0;
-	if (nb == 0)
-		return (1);
-	while (nb != 0)
+	if (c == 'd' || c == 'i')
 	{
-		count++;
-	nb = nb / base;
+		signed_nb = va_arg(*list, int);
+		ft_putnbr(signed_nb);
+		return (ft_count_signed_base(signed_nb,10));
 	}
-	return count;
+	else if (c == 'u')
+	{
+		unsigned_nb = va_arg(*list, unsigned int);
+		ft_putnbr(unsigned_nb);
+		return (ft_count_unsigned_base(unsigned_nb,10));
+	}
+	return (0);
 }

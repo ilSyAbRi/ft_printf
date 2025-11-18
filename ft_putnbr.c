@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count_unsigned_base.c                           :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/17 14:40:01 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/18 17:47:35 by ilsyabri         ###   ########.fr       */
+/*   Created: 2025/11/18 17:30:32 by ilsyabri          #+#    #+#             */
+/*   Updated: 2025/11/18 17:52:03 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_count_unsigned_base(unsigned long nb, int base)
+void	ft_putnbr(long nb)
 {
-	int	count;
-
-	count = 0;
-	if (nb == 0)
-		return (1);
-	while (nb != 0)
+	if (nb < 0)
 	{
-		count++;
-	nb = nb / base;
+		nb = nb * -1;
+		ft_putchar ('-');
 	}
-	return count;
+	if (nb > 9)
+		ft_putnbr(nb / 10);
+	ft_putchar(nb % 10 + '0');
 }
