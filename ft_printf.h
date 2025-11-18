@@ -6,7 +6,7 @@
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:14:49 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/18 17:39:23 by ilsyabri         ###   ########.fr       */
+/*   Updated: 2025/11/18 19:02:24 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	ft_putstr(char *str);
 void	ft_putchar(char c);
 void	ft_putnbr(long nb);
 int	ft_strlen(char *str);
+void	ft_print_hex(unsigned long nb,int track);
 
 //	function of count
 int	ft_count_signed_base(long nb, int base);

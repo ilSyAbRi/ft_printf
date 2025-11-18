@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_upper_hex.c                               :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/18 14:17:01 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/18 14:24:27 by ilsyabri         ###   ########.fr       */
+/*   Created: 2025/11/18 18:13:38 by ilsyabri          #+#    #+#             */
+/*   Updated: 2025/11/18 19:03:22 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.c"
+#include "ft_printf.h"
 
-void	ft_print_upper_hex(int nb)
+void	ft_print_hex(unsigned long nb,int track)
 {
-	int	i;
-	char	*hex;
+	char	*hex[2];
 
-	hex = "0123456789abcdef";
-	i = 0;
+	hex[0] = "0123456789abcdef";
+	hex[1] = "0123456789ABCDEF";
 	if (nb > 15)
-		ft_print_upper_hex(nb /16);
-	ft_putchar(hex[nb % 16]);
-
+		ft_print_hex(nb / 16,track);
+	ft_putchar(hex[track][nb % 16]);
 }
