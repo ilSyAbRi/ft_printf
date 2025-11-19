@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_hex.c                                     :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/18 18:13:38 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/19 22:58:41 by ilsyabri         ###   ########.fr       */
+/*   Created: 2025/11/19 22:39:57 by ilsyabri          #+#    #+#             */
+/*   Updated: 2025/11/19 22:40:58 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
-void	ft_print_hex(unsigned long nb, int track)
+int main()
 {
-	char	*hex[2];
-
-	hex[0] = "0123456789abcdef";
-	hex[1] = "0123456789ABCDEF";
-	if (nb > 15)
-		ft_print_hex(nb / 16, track);
-	ft_putchar(hex[track][nb % 16]);
+	ft_printf("%d\n",(ft_printf("%")));
+	printf("%d\n",(printf("%")));
 }

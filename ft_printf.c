@@ -6,7 +6,7 @@
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 17:44:02 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/19 19:18:56 by ilsyabri         ###   ########.fr       */
+/*   Updated: 2025/11/19 22:39:33 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	ft_do_normal_things(const char *str, va_list *list)
 	while (str[i])
 	{
 		if (str[i] == '%' && str[i + 1] == '\0')
-			return -1;
+			return (-1);
 		if (str[i] == '%' && check_valid_conversion(str[i + 1]))
 		{
 			count = count + dispatch_function(str[i + 1], list);
@@ -64,9 +64,11 @@ int	ft_do_normal_things(const char *str, va_list *list)
 int	ft_printf(const char *str, ...)
 {
 	va_list	args;
-	int	count;
+	int		count;
 
-	va_start(args,str);
+	if (str == NULL)
+		return (-1);
+	va_start(args, str);
 	count = ft_do_normal_things(str, &args);
 	va_end(args);
 	return (count);

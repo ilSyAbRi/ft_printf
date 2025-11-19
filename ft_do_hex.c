@@ -6,7 +6,7 @@
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/18 19:04:00 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/19 16:35:34 by ilsyabri         ###   ########.fr       */
+/*   Updated: 2025/11/19 22:52:29 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_do_hex(char c, va_list *list)
 {
-	unsigned long	keep;
+	unsigned int	keep;
 
-	keep = va_arg(*list, unsigned long);
+	keep = va_arg(*list, unsigned int);
 	if (c == 'x')
 	{
 		ft_print_hex(keep, 0);
