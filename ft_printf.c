@@ -6,7 +6,7 @@
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 17:44:02 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/19 15:42:12 by ilsyabri         ###   ########.fr       */
+/*   Updated: 2025/11/19 19:18:56 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	dispatch_function(char c, va_list *list)
 int	check_valid_conversion(char c)
 {
 	if (c == 'c' || c == 's' || c == 'p' || c == 'd' || c == 'i' || c == 'u'
-		|| c == 'x' || c == 'X' || c == '%' || c == '\0')
+		|| c == 'x' || c == 'X' || c == '%')
 		return (1);
 	return (0);
 }
