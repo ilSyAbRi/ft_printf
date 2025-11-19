@@ -6,7 +6,7 @@
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:25:19 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/19 15:56:06 by ilsyabri         ###   ########.fr       */
+/*   Updated: 2025/11/19 16:34:29 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
@@ -15,7 +15,7 @@
 
 int	main(void)
 {
-	ft_printf("\n%d\n",ft_printf("hello%"));
-	printf("\n%d\n",printf("hello%"));
+	ft_printf("%d",ft_printf("%x",1));
+	printf("%d",printf("%x",1));
 	return (0);
 }
