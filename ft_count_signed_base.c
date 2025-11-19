@@ -20,12 +20,12 @@ int	ft_count_signed_base(long nb, int base)
 	if (nb < 0)
 	{
 		count++;
-	nb = nb * -1;
+		nb = nb * -1;
 	}
 	while (nb != 0)
 	{
 		count++;
-	nb = nb / base;
+		nb = nb / base;
 	}
-	return count;
+	return (count);
 }

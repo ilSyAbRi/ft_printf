@@ -24,18 +24,17 @@ int		ft_printf(const char *str, ...);
 void	ft_putstr(char *str);
 void	ft_putchar(char c);
 void	ft_putnbr(long nb);
-int	ft_strlen(char *str);
-void	ft_print_hex(unsigned long nb,int track);
+int		ft_strlen(char *str);
+void	ft_print_hex(unsigned long nb, int track);
 
 //	function of count
-int	ft_count_signed_base(long nb, int base);
-int	ft_count_unsigned_base(unsigned long nb, int base);
-
+int		ft_count_signed_base(long nb, int base);
+int		ft_count_unsigned_base(unsigned long nb, int base);
 
 //	the main helper function
-int	ft_do_base_10(char c ,va_list *list);
-int	ft_do_hex(char c, va_list *list);
-int	ft_do_str_char(char c, va_list *list);
-int	ft_do_address(va_list *list);
-int	ft_do_modulo(void);
+int		ft_do_base_10(char c, va_list *list);
+int		ft_do_hex(char c, va_list *list);
+int		ft_do_str_char(char c, va_list *list);
+int		ft_do_address(va_list *list);
+int		ft_do_modulo(void);
 #endif

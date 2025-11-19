@@ -16,14 +16,13 @@ int	ft_do_address(va_list *list)
 {
 	unsigned long	addr;
 
-	addr = (unsigned long)va_arg(*list,void*);
-
+	addr = (unsigned long)va_arg(*list, void *);
 	if (addr == 0)
 	{
 		ft_putstr("(nil)");
-		return 5;
+		return (5);
 	}
 	ft_putstr("0x");
-	ft_print_hex(addr,0);
-	return (2 + ft_count_unsigned_base(addr,16));	
+	ft_print_hex(addr, 0);
+	return (2 + ft_count_unsigned_base(addr, 16));
 }

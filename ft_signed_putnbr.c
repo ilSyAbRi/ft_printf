@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/17 12:43:09 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/18 15:43:14 by ilsyabri         ###   ########.fr       */
+/*   Created: 2025/11/19 13:36:03 by ilsyabri          #+#    #+#             */
+/*   Updated: 2025/11/19 13:36:16 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.c"
+#include "ft_printf.h"
 
 void	ft_putnbr(long nb)
 {

@@ -24,5 +24,5 @@ int	ft_count_unsigned_base(unsigned long nb, int base)
 		count++;
 		nb = nb / base;
 	}
-	return count;
+	return (count);
 }

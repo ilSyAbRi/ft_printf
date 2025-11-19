@@ -16,16 +16,16 @@ int	ft_do_hex(char c, va_list *list)
 {
 	unsigned long	keep;
 
-	keep = va_arg(*list,unsigned long);
-	if(c == 'x')
+	keep = va_arg(*list, unsigned long);
+	if (c == 'x')
 	{
-		ft_print_hex(keep,0);
-		return (2 + ft_count_unsigned_base(keep,16));
+		ft_print_hex(keep, 0);
+		return (2 + ft_count_unsigned_base(keep, 16));
 	}
 	else if (c == 'X')
 	{
-		ft_print_hex(keep,1);
-		return (2 + ft_count_unsigned_base(keep,16));
+		ft_print_hex(keep, 1);
+		return (2 + ft_count_unsigned_base(keep, 16));
 	}
-	return 0;
+	return (0);
 }

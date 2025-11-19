@@ -15,5 +15,5 @@
 int	ft_do_modulo(void)
 {
 	ft_putchar('%');
-	return 1;
+	return (1);
 }

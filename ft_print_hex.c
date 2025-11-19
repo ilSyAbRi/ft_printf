@@ -12,13 +12,13 @@
 
 #include "ft_printf.h"
 
-void	ft_print_hex(unsigned long nb,int track)
+void	ft_print_hex(unsigned long nb, int track)
 {
 	char	*hex[2];
 
 	hex[0] = "0123456789abcdef";
 	hex[1] = "0123456789ABCDEF";
 	if (nb > 15)
-		ft_print_hex(nb / 16,track);
+		ft_print_hex(nb / 16, track);
 	ft_putchar(hex[track][nb % 16]);
 }
