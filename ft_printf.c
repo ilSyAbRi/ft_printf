@@ -6,7 +6,7 @@
 /*   By: ilsyabri <ilsyabri@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 17:44:02 by ilsyabri          #+#    #+#             */
-/*   Updated: 2025/11/19 22:39:33 by ilsyabri         ###   ########.fr       */
+/*   Updated: 2025/11/20 16:18:23 by ilsyabri         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	check_valid_conversion(char c)
 	return (0);
 }
 
-int	ft_do_normal_things(const char *str, va_list *list)
+int	ft_do_printf(const char *str, va_list *list)
 {
 	int	i;
 	int	count;
@@ -69,7 +69,7 @@ int	ft_printf(const char *str, ...)
 	if (str == NULL)
 		return (-1);
 	va_start(args, str);
-	count = ft_do_normal_things(str, &args);
+	count = ft_do_printf(str, &args);
 	va_end(args);
 	return (count);
 }
