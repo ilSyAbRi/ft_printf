@@ -1,4 +1,4 @@
-# **ft_printf**
+# ***ft_printf***
 
 A reimplementation of printf() in C, built as a static library.
 
