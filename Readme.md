@@ -2,6 +2,14 @@
 
 A reimplementation of printf() in C, built as a static library.
 
+```
+                                          __ _                   _       _    __ 
+                                         / _| |_      _ __  _ __(_)_ __ | |_ / _|
+                                        | |_| __|    | '_ \| '__| | '_ \| __| |_ 
+                                        |  _| |_     | |_) | |  | | | | | |_|  _|
+                                        |_|  \__|____| .__/|_|  |_|_| |_|\__|_|  
+                                               |_____|_|                         
+```
 ---
 
 ```c
@@ -91,6 +99,8 @@ libftprintf.a
 cc -Wall -Wextra -Werror libftprintf.a main.c -o test
 ./test
 ```
+
+---
 
 ### 🖨️ ft_printf Project Structure (Ultra-Informative)
 
