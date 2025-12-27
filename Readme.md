@@ -20,9 +20,10 @@ int ft_printf(const char *, ...);
 
 ###### Files:   `Makefile, ft_printf.h, *.c`
 
----
 
 ***Goal: master variadic functions and formatted output.***
+
+[Click here to open the PDF subject for more detail](./en_subject.pdf)
 
 ---
 
