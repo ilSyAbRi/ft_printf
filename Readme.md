@@ -91,3 +91,86 @@ libftprintf.a
 cc -Wall -Wextra -Werror libftprintf.a main.c -o test
 ./test
 ```
+
+### 🖨️ ft_printf Project Structure (Ultra-Informative)
+
+```c
+ft_printf/
+├── 📄 Makefile
+│   └─ Compiles all `.c` files into `libftprintf.a` (static library)
+│      • Flags: -Wall -Wextra -Werror → strict error checking
+│      • Example: cc -Wall -Wextra -Werror libftprintf.a main.c -o test
+│      • Ensures modular compilation and proper linking of helpers & handlers
+
+├── 📄 ft_printf.h
+│   └─ Declares all function prototypes for:
+│       • Handlers (ft_do_*.c)
+│       • Helpers (ft_*.c)
+│       • Ensures modularity & compilation safety
+
+├── 📄 ft_printf.c
+│   └─ Central dispatcher:
+│       • Parses format strings character by character
+│       • Validates conversion specifiers: %c, %s, %p, %d, %i, %u, %x, %X, %%
+│       • Calls appropriate handler functions
+│       • Returns total characters printed
+│       • Returns -1 for NULL input or incomplete format (`%` at end)
+
+├── 🗂️ Handlers/   (Functions for specific conversion specifiers)
+│   ├── 📄 ft_do_base_10.c
+│   │   └─ Handles `%d`, `%i` (signed) and `%u` (unsigned)
+│   │       • Dependencies: ft_putnbr, ft_count_signed_base, ft_count_unsigned_base
+│   │       • Handles negative numbers and unsigned printing
+│   │       • Returns total characters printed
+│
+│   ├── 📄 ft_do_hex.c
+│   │   └─ Handles `%x` (lowercase) and `%X` (uppercase)
+│   │       • Dependencies: ft_print_hex, ft_count_unsigned_base
+│   │       • Converts numbers to hexadecimal string
+│   │       • Returns total characters printed
+│
+│   ├── 📄 ft_do_address.c
+│   │   └─ Handles `%p` (pointers)
+│   │       • Dependencies: ft_print_hex, ft_count_unsigned_base, ft_putstr
+│   │       • Prints `0x` prefix
+│   │       • Prints "(nil)" for NULL pointers
+│   │       • Returns total characters printed including prefix
+│
+│   ├── 📄 ft_do_str_char.c
+│   │   └─ Handles `%s` (strings) and `%c` (characters)
+│   │       • Dependencies: ft_putstr, ft_putchar, ft_strlen
+│   │       • Prints "(null)" for NULL strings
+│   │       • Returns total characters printed
+│
+│   └── 📄 ft_do_modulo.c
+│       └─ Handles literal `%%`
+│           • Dependencies: ft_putchar
+│           • Returns 1
+
+├── 🗂️ Helpers/   (Utility functions supporting handlers)
+│   ├── 📄 ft_putchar.c
+│   │   └─ Writes a single character to stdout
+│
+│   ├── 📄 ft_putstr.c
+│   │   └─ Writes a string to stdout
+│
+│   ├── 📄 ft_putnbr.c
+│   │   └─ Prints signed or unsigned numbers
+│   │       • Handles negative numbers and recursion
+│
+│   ├── 📄 ft_print_hex.c
+│   │   └─ Prints numbers in hexadecimal format
+│   │       • Supports lowercase (`x`) and uppercase (`X`)
+│       • Uses recursion for multi-digit numbers
+│
+│   ├── 📄 ft_strlen.c
+│   │   └─ Returns length of a null-terminated string
+│
+│   ├── 📄 ft_count_signed_base.c
+│   │   └─ Returns digit count of signed numbers in a given base
+│   │       • Includes extra count for negative sign
+│
+│   └── 📄 ft_count_unsigned_base.c
+│       └─ Returns digit count of unsigned numbers in a given base
+
+```
