@@ -23,3 +23,41 @@ int ft_printf(const char *, ...);
 ---
 
 ***Goal: master variadic functions and formatted output.***
+
+---
+
+### Example Test (main.c)
+
+```c
+#include "ft_printf.h"
+
+int main(void)
+{
+    int r = ft_printf("Hi %s %d%%\n", "42", 7);
+    ft_printf("Return: %d\n", r);
+    return 0;
+}
+```
+
+### Expected Output
+```
+Hi 42 7%
+Return: 8
+```
+### Build
+
+```
+make
+```
+### Creates:
+
+```
+libftprintf.a
+```
+
+### Compile & Run Test
+
+```
+cc -Wall -Wextra -Werror libftprintf.a main.c -o test
+./test
+```
