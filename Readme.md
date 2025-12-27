@@ -60,7 +60,7 @@ ft_printf/
 
 ```
 
-[Click here to open the PDF subject for more detail]((en.subject.pdf))
+[Click here to open the PDF subject for more detail](en.subject.pdf)
 
 
 ---
