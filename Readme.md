@@ -60,7 +60,7 @@ ft_printf/
 
 ***Goal: master variadic functions and formatted output.***
 
-[Click here to open the PDF subject for more detail](./en_subject.pdf)
+[Click here to open the PDF subject for more detail](./en_subject(1).pdf)
 
 ---
 
