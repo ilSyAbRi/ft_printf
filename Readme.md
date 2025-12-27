@@ -28,6 +28,8 @@ int ft_printf(const char *, ...);
 
 ###### Files:   `Makefile, ft_printf.h, *.c`
 
+***Goal: master variadic functions and formatted output.***
+
 ### Project Structure
 
 ```
@@ -58,9 +60,8 @@ ft_printf/
 
 ```
 
-***Goal: master variadic functions and formatted output.***
+[Click here to open the PDF subject for more detail]((en.subject%20(1).pdf))
 
-[Click here to open the PDF subject for more detail](./en_subject(1).pdf)
 
 ---
 
