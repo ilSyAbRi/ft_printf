@@ -81,7 +81,7 @@ int main(void)
 ### Expected Output
 ```
 Hi 42 7%
-Return: 8
+Return: 9
 ```
 ### Build
 
@@ -97,7 +97,7 @@ libftprintf.a
 ### Compile & Run Test
 
 ```
-cc -Wall -Wextra -Werror libftprintf.a main.c -o test
+cc -Wall -Wextra -Werror main.c libftprintf.a -o test
 ./test
 ```
 
